@@ -1,0 +1,335 @@
+/* ── Resume Analytics Dashboard ──────────────────────────────── */
+
+.analytics-dashboard {
+  width: 100%;
+}
+
+.analytics-dashboard__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.analytics-dashboard__title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-text-primary, #e2e8f0);
+  margin: 0;
+}
+
+.analytics-dashboard__subtitle {
+  font-size: 0.8rem;
+  color: var(--color-text-muted, #94a3b8);
+  margin-top: 0.15rem;
+}
+
+/* ── Stats Row ──────────────────────────────────────────────── */
+
+.analytics-dashboard__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.7rem;
+  margin-bottom: 1.25rem;
+}
+
+.analytics-dashboard__stat {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 0.85rem;
+  text-align: center;
+  backdrop-filter: blur(12px);
+}
+
+.analytics-dashboard__stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary, #f1f5f9);
+  line-height: 1.2;
+}
+
+.analytics-dashboard__stat-value--accent {
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.analytics-dashboard__stat-label {
+  font-size: 0.7rem;
+  color: var(--color-text-muted, #94a3b8);
+  margin-top: 0.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ── Section Panel ──────────────────────────────────────────── */
+
+.analytics-dashboard__section {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.analytics-dashboard__section-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-primary, #e2e8f0);
+  margin: 0 0 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* ── Trend Chart ────────────────────────────────────────────── */
+
+.analytics-dashboard__trend-chart {
+  width: 100%;
+  overflow: hidden;
+}
+
+.analytics-dashboard__trend-chart svg {
+  display: block;
+}
+
+/* ── Skill Bars ─────────────────────────────────────────────── */
+
+.analytics-dashboard__skill-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.analytics-dashboard__skill-row {
+  display: grid;
+  grid-template-columns: 1fr auto 90px;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.analytics-dashboard__skill-name {
+  color: var(--color-text-primary, #e2e8f0);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.analytics-dashboard__skill-count {
+  color: var(--color-text-muted, #64748b);
+  font-size: 0.72rem;
+}
+
+.analytics-dashboard__skill-bar {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.analytics-dashboard__skill-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+
+.analytics-dashboard__skill-bar-fill--matched {
+  background: #34d399;
+}
+
+.analytics-dashboard__skill-bar-fill--partial {
+  background: #fbbf24;
+}
+
+.analytics-dashboard__skill-bar-fill--missing {
+  background: #f87171;
+}
+
+/* ── Role Table ─────────────────────────────────────────────── */
+
+.analytics-dashboard__role-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.analytics-dashboard__role-table th {
+  text-align: left;
+  font-weight: 600;
+  color: var(--color-text-muted, #94a3b8);
+  padding: 0.4rem 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.analytics-dashboard__role-table td {
+  padding: 0.5rem;
+  color: var(--color-text-primary, #e2e8f0);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.analytics-dashboard__role-table tr:last-child td {
+  border-bottom: none;
+}
+
+.analytics-dashboard__role-name {
+  font-weight: 600;
+}
+
+.analytics-dashboard__role-score {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.analytics-dashboard__role-score--good {
+  color: #34d399;
+}
+
+.analytics-dashboard__role-score--mid {
+  color: #fbbf24;
+}
+
+.analytics-dashboard__role-score--low {
+  color: #f87171;
+}
+
+/* ── Improvement Cards ──────────────────────────────────────── */
+
+.analytics-dashboard__improvements {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.65rem;
+}
+
+.analytics-dashboard__improvement {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.analytics-dashboard__improvement-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-text-muted, #94a3b8);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.3rem;
+}
+
+.analytics-dashboard__improvement-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.analytics-dashboard__improvement-value--up {
+  color: #34d399;
+}
+
+.analytics-dashboard__improvement-value--down {
+  color: #f87171;
+}
+
+.analytics-dashboard__improvement-value--flat {
+  color: var(--color-text-primary, #e2e8f0);
+}
+
+.analytics-dashboard__improvement-detail {
+  font-size: 0.7rem;
+  color: var(--color-text-muted, #64748b);
+  margin-top: 0.15rem;
+}
+
+/* ── Empty State ────────────────────────────────────────────── */
+
+.analytics-dashboard__empty {
+  text-align: center;
+  padding: 2rem;
+  color: var(--color-text-muted, #64748b);
+}
+
+.analytics-dashboard__empty-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.analytics-dashboard__empty-text {
+  font-size: 0.85rem;
+  color: var(--color-text-primary, #94a3b8);
+  font-weight: 500;
+}
+
+/* ── Health Grade Badge ─────────────────────────────────────── */
+
+.analytics-dashboard__grade {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.analytics-dashboard__grade--a {
+  background: rgba(52, 211, 153, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.analytics-dashboard__grade--b {
+  background: rgba(96, 165, 250, 0.15);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+}
+
+.analytics-dashboard__grade--c {
+  background: rgba(251, 191, 36, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.analytics-dashboard__grade--d {
+  background: rgba(248, 113, 113, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(248, 113, 113, 0.3);
+}
+
+.analytics-dashboard__grade-letter {
+  font-size: 1.2rem;
+}
+
+.analytics-dashboard__grade-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+
+@media (max-width: 600px) {
+  .analytics-dashboard__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .analytics-dashboard__improvements {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .analytics-dashboard__role-table {
+    font-size: 0.72rem;
+  }
+}
