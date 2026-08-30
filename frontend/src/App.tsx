@@ -27,6 +27,7 @@ import { WhatsNewModal } from './components/WhatsNewModal'
 import { shouldShowWhatsNew } from './data/whatsNewReleases'
 import { ShareResult } from './components/ShareResult'
 import { setResumeRoastConsent } from './utils/cookieConsent'
+import { QuickStats } from './components/QuickStats'
 
 type Theme = 'light' | 'dark'
 
@@ -1091,6 +1092,12 @@ function App() {
               )}
 
               <AtsScore score={score} />
+
+              <QuickStats
+                resumeText={resumeText}
+                skills={skills}
+                suggestions={suggestions}
+              />
 
               <ScoreBreakdown breakdown={scoreBreakdown} />
 
